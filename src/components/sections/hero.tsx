@@ -92,8 +92,9 @@ const Hero = () => {
               </div>
               
               {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-12 h-12 bg-primary/20 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-secondary/20 rounded-full animate-pulse delay-1000"></div>
+              <div className="absolute -top-8 -right-8 w-20 h-20 bg-primary/30 rounded-full animate-pulse glow-primary"></div>
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-secondary/30 rounded-full animate-pulse delay-1000 glow-secondary"></div>
+              <div className="absolute top-1/2 -right-4 w-12 h-12 bg-accent/20 rounded-full animate-pulse delay-500"></div>
             </div>
           </div>
         </div>
