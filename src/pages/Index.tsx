@@ -6,7 +6,8 @@ import Contact from "@/components/sections/contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      <div className="galaxy-background"></div>
       <Navigation />
       <main>
         <Hero />
