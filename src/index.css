@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Cybersecurity Design System - Satts Cyber Tech
+All colors MUST be HSL for consistency and theme compatibility.
+*/
+
+@layer base {
+  :root {
+    /* Core brand colors - professional dark theme with galaxy background */
+    --background: 220 15% 4%;
+    --foreground: 210 15% 95%;
+    
+    /* Dynamic galaxy background with binary wave and wave effect */
+    --galaxy-bg: radial-gradient(ellipse at top, #1e1b4b 0%, #0f0f23 25%, #000000 50%), 
+                 radial-gradient(ellipse at bottom, #4338ca 0%, #1e1b4b 25%, #000000 70%),
+                 linear-gradient(45deg, transparent 30%, #059669 32%, transparent 34%),
+                 linear-gradient(-45deg, transparent 45%, #3b82f6 47%, transparent 49%),
+                 url('/src/assets/wave-effect.png');
+    
+    /* Binary wave pattern overlay */
+    --binary-wave: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 2px,
+      hsl(var(--primary) / 0.1) 2px,
+      hsl(var(--primary) / 0.1) 4px,
+      transparent 4px,
+      transparent 12px,
+      hsl(var(--secondary) / 0.08) 12px,
+      hsl(var(--secondary) / 0.08) 14px,
+      transparent 14px,
+      transparent 28px
+    );
+
+    /* Card and surface colors */
+    --card: 220 15% 6%;
+    --card-foreground: 210 15% 95%;
+
+    /* Interactive surfaces */
+    --popover: 220 15% 8%;
+    --popover-foreground: 210 15% 95%;
+
+    /* Primary brand colors - professional blue */
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 15% 4%;
+    --primary-glow: 210 100% 70%;
+
+    /* Secondary brand colors - cybersecurity green */
+    --secondary: 160 100% 45%;
+    --secondary-foreground: 220 15% 4%;
+    --secondary-glow: 160 100% 55%;
+
+    /* Muted elements */
+    --muted: 220 15% 12%;
+    --muted-foreground: 210 10% 65%;
+
+    /* Accent colors */
+    --accent: 210 100% 55%;
+    --accent-foreground: 220 15% 4%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 210 100% 60%;
+
+    /* Design tokens */
+    --radius: 0.75rem;
+
+    /* Professional gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(220 15% 8%) 50%, hsl(var(--background)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-glow)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(220 15% 8%) 100%);
+
+    /* Professional shadows */
+    --shadow-sm: 0 2px 4px hsl(var(--background) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--background) / 0.15);
+    --shadow-lg: 0 8px 25px hsl(var(--background) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
+    --shadow-glow-secondary: 0 0 30px hsl(var(--secondary) / 0.3);
+
+    /* Animation properties */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer components {
+  /* Professional component styles */
+  .hero-section {
+    background: var(--galaxy-bg);
+    background-size: 100% 100%, 100% 100%, 200% 200%, 200% 200%;
+    animation: galaxy-drift 20s ease-in-out infinite;
+  }
+  
+  .galaxy-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--galaxy-bg), var(--binary-wave);
+    background-size: 100% 100%, 100% 100%, 200% 200%, 200% 200%, cover, 100% 20px;
+    background-blend-mode: normal, normal, normal, normal, overlay, normal;
+    animation: galaxy-drift 20s ease-in-out infinite, binary-flow 15s linear infinite;
+    z-index: -1;
+  }
+  
+  .service-card {
+    @apply bg-gradient-to-br from-card to-muted/50 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .glow-primary {
+    @apply shadow-[0_0_30px_hsl(var(--primary)/0.3)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)];
+  }
+  
+  .glow-secondary {
+    @apply shadow-[0_0_30px_hsl(var(--secondary)/0.3)] hover:shadow-[0_0_40px_hsl(var(--secondary)/0.4)];
+  }
+  
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-glow bg-clip-text text-transparent;
+  }
+  
+  .cyber-border {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/20 before:via-transparent before:to-secondary/20 before:rounded-lg before:-m-px;
+  }
+  
+  @keyframes galaxy-drift {
+    0%, 100% { 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, 0% 0%; 
+    }
+    25% { 
+      background-position: 100% 0%, 0% 100%, 25% 25%, 75% 75%, 25% 25%, 25% 0%; 
+    }
+    50% { 
+      background-position: 100% 100%, 0% 0%, 50% 50%, 50% 50%, 50% 50%, 50% 0%; 
+    }
+    75% { 
+      background-position: 0% 100%, 100% 0%, 75% 75%, 25% 25%, 75% 75%, 75% 0%; 
+    }
+  }
+  
+  @keyframes binary-flow {
+    0% { 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, 0px 0px; 
+    }
+    100% { 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, -100px 0px; 
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
