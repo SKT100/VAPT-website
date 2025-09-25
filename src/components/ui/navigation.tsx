@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import sattsLogo from "@/assets/satts-logo.png";
+import sattsLogo from "@/assets/satts-logo-clean.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navigation = () => {
             <img 
               src={sattsLogo} 
               alt="Satts Cyber Tech" 
-              className="h-12 w-auto filter brightness-0 invert"
+              className="h-16 w-auto"
             />
             <span className="text-2xl font-bold text-gradient-primary">
               Satts Cyber Tech

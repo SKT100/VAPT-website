@@ -12,11 +12,12 @@ All colors MUST be HSL for consistency and theme compatibility.
     --background: 220 15% 4%;
     --foreground: 210 15% 95%;
     
-    /* Dynamic galaxy background with binary wave */
+    /* Dynamic galaxy background with binary wave and wave effect */
     --galaxy-bg: radial-gradient(ellipse at top, #1e1b4b 0%, #0f0f23 25%, #000000 50%), 
                  radial-gradient(ellipse at bottom, #4338ca 0%, #1e1b4b 25%, #000000 70%),
                  linear-gradient(45deg, transparent 30%, #059669 32%, transparent 34%),
-                 linear-gradient(-45deg, transparent 45%, #3b82f6 47%, transparent 49%);
+                 linear-gradient(-45deg, transparent 45%, #3b82f6 47%, transparent 49%),
+                 url('/src/assets/wave-effect.png');
     
     /* Binary wave pattern overlay */
     --binary-wave: repeating-linear-gradient(
@@ -159,7 +160,8 @@ All colors MUST be HSL for consistency and theme compatibility.
     width: 100%;
     height: 100%;
     background: var(--galaxy-bg), var(--binary-wave);
-    background-size: 100% 100%, 100% 100%, 200% 200%, 200% 200%, 100% 20px;
+    background-size: 100% 100%, 100% 100%, 200% 200%, 200% 200%, cover, 100% 20px;
+    background-blend-mode: normal, normal, normal, normal, overlay, normal;
     animation: galaxy-drift 20s ease-in-out infinite, binary-flow 15s linear infinite;
     z-index: -1;
   }
@@ -190,25 +192,25 @@ All colors MUST be HSL for consistency and theme compatibility.
   
   @keyframes galaxy-drift {
     0%, 100% { 
-      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, 0% 0%; 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, 0% 0%; 
     }
     25% { 
-      background-position: 100% 0%, 0% 100%, 25% 25%, 75% 75%, 25% 0%; 
+      background-position: 100% 0%, 0% 100%, 25% 25%, 75% 75%, 25% 25%, 25% 0%; 
     }
     50% { 
-      background-position: 100% 100%, 0% 0%, 50% 50%, 50% 50%, 50% 0%; 
+      background-position: 100% 100%, 0% 0%, 50% 50%, 50% 50%, 50% 50%, 50% 0%; 
     }
     75% { 
-      background-position: 0% 100%, 100% 0%, 75% 75%, 25% 25%, 75% 0%; 
+      background-position: 0% 100%, 100% 0%, 75% 75%, 25% 25%, 75% 75%, 75% 0%; 
     }
   }
   
   @keyframes binary-flow {
     0% { 
-      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, 0px 0px; 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, 0px 0px; 
     }
     100% { 
-      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, -100px 0px; 
+      background-position: 0% 0%, 100% 100%, 0% 0%, 100% 100%, center, -100px 0px; 
     }
   }
 }
