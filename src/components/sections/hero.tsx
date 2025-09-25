@@ -3,8 +3,17 @@ import { Shield, Lock, Eye, Zap } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="hero-section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-      <div className="container mx-auto">
+    <section className="hero-section relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden">
+      {/* Background Image Layer */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
+        style={{ backgroundImage: "url('/icons/bg-pattern.webp')" }}
+      ></div>
+
+      {/* Dark Overlay to make text readable */}
+      <div className="absolute inset-0 bg-black/40"></div>
+
+      <div className="container relative z-10 mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
