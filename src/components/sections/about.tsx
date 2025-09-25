@@ -16,7 +16,10 @@ const About = () => {
     "SOC 2 Type II",
     "GDPR Compliant",
     "OWASP Member",
-    "CEH Certified Team"
+    "CEH Certified Team",
+    "JustDial 5 Star Rating",
+    "Recognized by Silicon India",
+    "Startup India Registered"
   ];
 
   return (

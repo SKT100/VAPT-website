@@ -7,20 +7,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: "security@sattscybertech.com",
+      details: "services@sattscybertech.in",
       subtitle: "Get in touch for inquiries"
     },
     {
       icon: Phone,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
+      details: "+91 9932962939",
       subtitle: "24/7 Emergency Response"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: "123 Cyber Security Blvd",
-      subtitle: "New York, NY 10001"
+      details: "3rd Floor, Seven Hills Building, En 34, Salt Lake Sector 5",
+      subtitle: " Kolkata, West Bengal 700091"
     }
   ];
 
@@ -43,13 +43,12 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card key={index} className="service-card text-center">
                 <CardContent className="p-8">
-                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                    index === 0 
-                      ? 'bg-primary/10 text-primary' 
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${index === 0
+                      ? 'bg-primary/10 text-primary'
                       : index === 1
-                      ? 'bg-secondary/10 text-secondary'
-                      : 'bg-destructive/10 text-destructive'
-                  }`}>
+                        ? 'bg-secondary/10 text-secondary'
+                        : 'bg-destructive/10 text-destructive'
+                    }`}>
                     <info.icon className="h-8 w-8" />
                   </div>
                   <h3 className="font-bold text-xl mb-2">{info.title}</h3>
@@ -59,7 +58,7 @@ const Contact = () => {
               </Card>
             ))}
           </div>
-          
+
           {/* Emergency Contact - Full Width */}
           <Card className="service-card bg-gradient-to-r from-red-500/10 to-orange-500/10 border-red-500/20 mt-8">
             <CardContent className="p-8 text-center">
@@ -67,9 +66,14 @@ const Contact = () => {
               <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
                 For immediate security incidents, call our 24/7 emergency response team
               </p>
-              <Button variant="destructive" size="lg" className="text-lg px-8 py-6">
-                Emergency Hotline: +1 (555) 911-CYBER
+              <Button
+                variant="destructive"
+                size="lg"
+                className="w-full max-w-xs mx-auto text-lg sm:px-8 sm:py-6 px-4 py-4"
+              >
+                Emergency Hotline: +91 9932962939
               </Button>
+
             </CardContent>
           </Card>
         </div>

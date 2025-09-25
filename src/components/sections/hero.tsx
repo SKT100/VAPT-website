@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Dark Overlay to make text readable */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      <div className="container relative z-10 mx-auto">
+      <div className="container relative z-10 mx-auto py-8 md:py-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -55,7 +55,7 @@ const Hero = () => {
               <Button size="lg" variant="hero" className="text-lg px-8 py-6">
                 Get Security Assessment
               </Button>
-              <Button size="lg" variant="professional" className="text-lg px-8 py-6">
+              <Button size="lg" variant="professional" className="text-lg px-8 py-6" onClick={() => handleLearnMore(service.title)}>
                 Learn More
               </Button>
             </div>

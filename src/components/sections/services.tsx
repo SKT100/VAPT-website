@@ -35,18 +35,18 @@ const Services = () => {
   const services = [
     {
       icon: Shield,
-      title: "Vulnerability Assessment & Penetration Testing (VAPT)",
-      description: "Comprehensive security testing to identify and remediate vulnerabilities in your systems before attackers can exploit them.",
+      title: "VAPT Services",
+      description: "Comprehensive security testing to identify and remediate vulnerabilities in your systems before attackers can exploit.",
       features: ["Network Security Testing", "Web Application Testing", "Mobile App Security", "API Security Assessment"],
       color: "primary"
     },
-    {
-      icon: Eye,
-      title: "Security Operations Center (SOC)",
-      description: "24/7 monitoring and incident response services to detect, analyze, and respond to security threats in real-time.",
-      features: ["Real-time Monitoring", "Threat Intelligence", "Incident Response", "Compliance Reporting"],
-      color: "secondary"
-    },
+    // {
+    //   icon: Eye,
+    //   title: "Security Operations Center (SOC)",
+    //   description: "24/7 monitoring and incident response services to detect, analyze, and respond to security threats in real-time.",
+    //   features: ["Real-time Monitoring", "Threat Intelligence", "Incident Response", "Compliance Reporting"],
+    //   color: "secondary"
+    // },
     {
       icon: Globe,
       title: "Web Application Security",
