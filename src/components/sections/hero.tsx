@@ -2,48 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Shield, Lock, Eye, Zap } from "lucide-react";
 
 const Hero = () => {
-  const backgroundImageUrl = "/icons/bg-pattern.webp";
-
   return (
-    <section className="hero-section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
-      {/* Background Image Layer */}
-      <div className="absolute inset-0 -z-20">
-        <img 
-          src={backgroundImageUrl}
-          alt="Cybersecurity background design"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Optional overlay to ensure text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
-
-      {/* Pattern Overlay on top of image */}
-      <div className="absolute inset-0 -z-10">
-        {/* Subtle tech pattern overlay */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              linear-gradient(90deg, transparent 49%, rgba(59, 130, 246, 0.3) 49%, rgba(59, 130, 246, 0.3) 51%, transparent 51%),
-              linear-gradient(transparent 49%, rgba(59, 130, 246, 0.3) 49%, rgba(59, 130, 246, 0.3) 51%, transparent 51%)
-            `,
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-        
-        {/* Circuit-like pattern */}
-        <div className="absolute inset-0 opacity-3">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `
-              radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.4) 1px, transparent 1px),
-              radial-gradient(circle at 80% 40%, rgba(59, 130, 246, 0.4) 1px, transparent 1px),
-              radial-gradient(circle at 60% 80%, rgba(168, 85, 247, 0.4) 1px, transparent 1px)
-            `,
-            backgroundSize: '80px 80px, 120px 120px, 100px 100px'
-          }}></div>
-        </div>
-      </div>
-      
-      <div className="container mx-auto relative z-10">
+    <section className="hero-section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+      <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
