@@ -1,8 +1,37 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Eye, Globe, Smartphone, Server, AlertTriangle } from "lucide-react";
+import { Shield, Eye, Globe, Smartphone, Server, AlertTriangle, Cloud } from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
 
 const Services = () => {
+  const { toast } = useToast();
+  
+  const handleLearnMore = (serviceName: string) => {
+    toast({
+      title: "Learn More",
+      description: `Contact us to learn more about our ${serviceName} services.`,
+    });
+    
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleCustomSolution = () => {
+    toast({
+      title: "Custom Security Solution",
+      description: "Let's discuss your specific security needs. Redirecting to contact form...",
+    });
+    
+    // Scroll to contact section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   const services = [
     {
       icon: Shield,
@@ -45,6 +74,13 @@ const Services = () => {
       description: "Rapid response to security incidents with detailed forensic analysis and recovery planning.",
       features: ["Emergency Response", "Digital Forensics", "Malware Analysis", "Recovery Planning"],
       color: "secondary"
+    },
+    {
+      icon: Cloud,
+      title: "Cloud Security",
+      description: "Comprehensive cloud security solutions to protect your data, applications, and infrastructure in the cloud.",
+      features: ["AWS/Azure/GCP Security", "Cloud Compliance", "Container Security", "DevSecOps Integration"],
+      color: "primary"
     }
   ];
 
@@ -94,6 +130,7 @@ const Services = () => {
                 <Button 
                   variant={service.color === 'primary' ? 'hero' : 'cyber'} 
                   className="w-full mt-6"
+                  onClick={() => handleLearnMore(service.title)}
                 >
                   Learn More
                 </Button>
@@ -103,7 +140,12 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="professional" className="px-8">
+          <Button 
+            size="lg" 
+            variant="professional" 
+            className="px-8"
+            onClick={handleCustomSolution}
+          >
             Request Custom Security Solution
           </Button>
         </div>
