@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import { Shield, Lock, Eye, Zap } from "lucide-react";
 
 const Hero = () => {
+  const handleExploreServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero-section relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden">
       {/* Background Image Layer */}
@@ -50,14 +57,19 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="hero" className="text-lg px-8 py-6">
-                Get Security Assessment
+            {/* Single CTA Button */}
+            <div className="flex flex-col items-start">
+              <Button 
+                size="lg" 
+                variant="hero" 
+                className="text-lg px-8 py-6 mb-3"
+                onClick={handleExploreServices}
+              >
+                Explore Our Security Services
               </Button>
-              <Button size="lg" variant="professional" className="text-lg px-8 py-6" >
-                Learn More
-              </Button>
+              <p className="text-sm text-muted-foreground">
+                Discover comprehensive cybersecurity solutions tailored for your business
+              </p>
             </div>
 
             {/* Certifications */}

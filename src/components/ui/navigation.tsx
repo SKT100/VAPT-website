@@ -5,6 +5,12 @@ import sattsLogo from "@/assets/satts-logo-new.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const navItems = [
     { name: "About Us", href: "#about" },
@@ -37,10 +43,10 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
-              <Button 
-                variant="hero" 
+              <Button
+                variant="hero"
                 size="sm"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={handleContact}
               >
                 Get Quote
               </Button>
@@ -78,13 +84,13 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button 
-                  variant="hero" 
-                  size="sm" 
+                <Button
+                  variant="hero"
+                  size="sm"
                   className="w-full"
                   onClick={() => {
                     setIsMenuOpen(false);
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    handleContact();
                   }}
                 >
                   Get Quote
