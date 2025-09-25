@@ -55,7 +55,7 @@ const Hero = () => {
               <Button size="lg" variant="hero" className="text-lg px-8 py-6">
                 Get Security Assessment
               </Button>
-              <Button size="lg" variant="professional" className="text-lg px-8 py-6" onClick={() => handleLearnMore(service.title)}>
+              <Button size="lg" variant="professional" className="text-lg px-8 py-6" >
                 Learn More
               </Button>
             </div>
